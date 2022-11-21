@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOD Benchmark</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet"> 
+    <link href="css/styles.css" rel="stylesheet"> 
+      
+</head> 
+
+<body id="home">
+
+    <header id="header">
+        <nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"></a>
+                    <h1 style="color:#48B1DF">OoD-Bench</h1>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll active"><a href="#home">Home</a></li> 
+						<li class="scroll"><a href="#research">Research Background</a></li>
+                        <li class="scroll"><a href="#methodology">Methodology</a></li>
+                        <li class="scroll"><a href="#result">Experiment Results</a></li> 
+                        <li class="scroll"><a href="#comparison">Comparison</a></li>
+                        <li class="scroll"><a href="#footer">Contact Us</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+
+    <section id="hero-banner">
+             <div class="banner-inner">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                    <h2>OoD-Bench:Benchmarking and Understanding Out of Distribution Generalization Datasets and Algorithms</h2>                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section><!--/#main-slider-->
+
+     <section id="research">
+	 <div class="container">
+	   <div class="section-header">
+
+                <h2 class="section-title wow fadeInDown">Research Background</h2>
+                <p class="wow fadeInDown">
+                    <br>
+                    Traditional machine learning algorithms usually assume that training samples and test samples come from the same probability distribution Independent and Identically Distributed (i.i.d.). But for Out-of-Distribution (OoD) scenarios, that is, when the probability distribution of training samples is different from that of test samples, it is difficult for the trained model to achieve good performance in the target domain. 
+                </p>
+            </div>
+	 <div class="row FeatLayout">
+<div class="col-md-5 Featimg"> <img src="images/research.webp" alt="feature" class="img-responsive center-block"></div>
+<div class="col-md-7">
+<p>Although many OoD algorithms have been proposed in recent years, how to understand the training data and better measure OoD algorithms is still a challenging task. <b>This paper identifies and measures two kinds of correlation shift and diversity shift data offset problems that widely exist in OoD datasets in real life, and analyzes the performance of existing OoD algorithms on these two types of benchmark datasets through a large number of experiments. At the same time, this paper unifies a variety of algorithms and data sets in different fields that were less connected before under the framework of OoD research, providing a unified benchmark and measurement index for subsequent research on the internal mechanism of artificial intelligence.</b></p>
+</div>
+<ul class="listarrow">
+    <p>Based on a large number of experiments and analysis, this paper puts forward three suggestions for future OoD generalization research:</p>
+    <li><i class="fa fa-angle-double-right"></i>OoD algorithms should be comprehensively evaluated on two types of datasets, one dominated by diversity shift and the other dominated by correlation shift. These two distributions can be measured by the quantification method of this study;</li>
+    <li><i class="fa fa-angle-double-right"></i>Before designing the OoD algorithm, you can first explore the nature of the distribution shift in the OoD problem to be solved. The optimal processing methods for different types of distribution shifts may be different;</li>
+    <li><i class="fa fa-angle-double-right"></i>Design large-scale datasets that more subtly capture changes in real-world distributions. The experiments and analysis of this study show that distribution changes that are imperceptible to the human eye also have a significant impact on the reliability of the neural network.</li>
+    </ul>
+</div>
+	 </div>
+	 </section>
+     <br>
+     <br>
+
+
+ <section id="methodology" >
+        <div class="container">
+                <br>
+                <br>
+                <br>
+                <br>
+            <div class="section-header">
+                <h2 class="section-title wow fadeInDown">Diversity Shift and Correlation Shift</h2>
+                <img src="images/dvshift.webp" alt="feature" class="img-responsive center-block">
+                <p class="wow fadeInDown">The figure shows the depiction of diversity shift and correlation shift. Diversity shift is equal to half the sum of the areas of the coloured regions on the left. Correlation shift is an integral on the point set, and each value of the integral can be regarded as half of the sum of the heights of the colour bars on the right, multiplied by the square root of the product of the two probability values as weights. </p>
+               <br>
+              
+                <p class="wow fadeInDown">Under the setting of supervised learning, it may be assumed that the input variable X is determined by a series of latent variables, and these latent variables can be divided into two, denoted as Z1 and Z2, of which only Z1 can determine the target variable Y. Given the training and test environments and their associated probability density functions p and q, and assuming the absence of a label shift, out-of-distribution generalization is made possible by the presence of Z1. On the other hand, the existence of Z2 that satisfies the opposite condition makes out-of-distribution generalization difficult. </p>
+               
+            </div>
+
+            <div class="row">
+                <div class="features">
+
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="500ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullseye"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Diversity Shift</h4>
+                                <p>Diversity shift is caused by features that satisfy the first condition of Z2. Diversity shift is marked by features that are only present in the training environment and not in the test environment (or vice versa). For example, in PACS, the colours in the photo completely disappear in the sketch. </p>
+                                </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-duration="300ms" data-wow-delay="500ms">
+                        <div class="media service-box">
+                            <div class="pull-left">
+                                <i class="fa fa-bullseye"></i>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading">Correlation Shift</h4>
+                                <p>Correlation shift is caused by features that satisfy the second condition. The hallmark of a correlation shift is the features that appear in both the training and test environments, but the statistics of these features are different in different environments. For example, on Colored MNIST, the association of colors and numbers is not the same between the two environments. </p>
+                            </div>
+                        </div>
+                    </div><!--/.col-md-4-->
+                    
+                </div>
+            </div><!--/.row--> 
+            <div class="col-md-5 Featimg"> <img src="images/dvpic.webp" alt="feature" class="img-responsive center-block"></div>
+            <div class="col-md-7">
+            <p>In actual calculation, a neural network is trained to extract the features required for calculation for estimation. The estimation results of diversity shift and corelation shift on various datasets are shown in the figure. This result is in line with intuition: most existing out-of-distribution generalization benchmark datasets fall on or near the axis, meaning they are all dominated by only one of the two. For data sets with unknown distribution shifts, such as ImageNet-A, ImageNet-R and ImageNet-V2, the research method successfully decomposes the shifts it has into two dimensions of diversity and correlation, Therefore, the estimation results of this study can be used to select the appropriate algorithm for different datasets.</p>
+        </div>   
+        </div><!--/.container-->
+    </section><!--/#services-->
+
+  
+ <section id="result">
+        <div class="container">
+
+            <div class="section-header">
+                <h2 class="section-title wow fadeInDown">Experiment Results</h2>
+                <p class="wow fadeInDown"><b>In this paper, 16 different algorithms (ERM, GroupDRO, Mixup, MLDG, DANN, CORAL, MMD, IRM, VREx, ARM, MTL, SagNet, RSC, ANDMask, IGA, ERDG) were tested on 7 different OoD datasets (PACS, The performance on OfficeHome, Terra Incognita, WILDS-Camelyon17, Colored-MNIST, NICO, CelebA) was tested and analyzed.</p>
+                <p class="wow fadeInDown">As shown in the following benchmark results, this type of algorithm selection may be critical, because most out-of-distribution generalization algorithms cannot perform well on two types of data sets at the same time, one is dominated by diversity shift, and the other is Is dominated by correlation shift.</p>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                  <img class="img-responsive" src="images/left.jpg" alt="">
+                  <p style="text-align: center;">  Table 1: Results of ERM and OoD algorithms on biased diversity shift datasets.</p>
+                </div>
+
+                <div class="col-sm-6 wow fadeInRight">
+                <img class="img-responsive" src="images/right.jpg" alt="">
+                <p style="text-align: center;">   Table 2: Results of ERM and OoD algorithms on biased Correlation shift datasets.</p>
+                
+                </div>
+            <br>
+            <p>Benchmark results are shown in Tables 1 and 2. In addition to mean accuracy and standard error, the study also calculated a ranking score for each algorithm relative to the ERM. Specifically, for each dataset-algorithm pair, each algorithm is assigned a separate score compared to the ERM: -1 (lower), 0 (equal), 1 (higher). Finally, the ranking scores are obtained by adding the dataset scores listed in the table. This ranking score reflects the relative degree of robustness of Diversity shift versus Correlation shift. It can be seen that most existing OoD algorithms cannot achieve continuous performance improvement compared with ERM. For example, the results of MMD, RSC, IGA and SagNet are higher than ERM on the dataset dominated by diversity shift, but lower than ERM on the dataset dominated by correlation shift.
+                Therefore, this paper proposes that to measure the effectiveness of an OoD algorithm, the OoD performance of the two dimensions of diversity shift and correlation shift should be tested at the same time.</b>
+                </p>
+            </div>
+        </div>
+    </section><!--/#result-->
+
+   
+  <section id="comparison">
+        <div class="container">
+            <div class="section-header">
+                <br><br><br><br>
+                <h2 class="section-title wow fadeInDown">Interpretations & Comparisons</h2>
+               </div>
+        
+            <div class="row">
+                <div class="col-sm-6 wow fadeInLeft">
+                    <img class="img-responsive" src="images/heatmap.jpg" alt="">
+                </div>
+
+                <div class="col-sm-6 wow fadeInRight">
+                <br>
+                  <p>The Figure on the left shows the attention heatmaps of selected algorithms trained and evaluated on PACS and NICO visualized by EigenCAM. Due to space limitations, two representative algorithms are chosen here: RSC and VREx, for comparison with ERM. The left two columns are images from PACS, and RSC shows better results than ERM and VREx because RSC has a wider focus range and thus captures more global structural information than local details. The two columns on the right are samples from NICO, and it can be seen from the figure that the attention of RSC is attracted by non-causal and local features such as background and body parts. In contrast, ERM covers more regions, including object locations of interest, while VREx's attention is more diverse, covering different regions scattered throughout the image. In addition, the attention strength is weak, suggesting that VREx is less prone to overconfidence in spurious correlations.</p>
+                
+                </div>
+            </div>
+                <br>
+                <br>
+            <div class="row">
+    
+                <div class="col-sm-6 wow fadeInLeft">
+                    
+                    <p>The figure right shows the estimation of diversity and correlation shift under varying color distribution in Colored
+                        MNIST. Another color, blue, uncorrelated with the labeled classes, is added onto the digits to create
+                        diversity shift. The intensity of blue is sampled from a truncated Gaussian distribution for every
+                        image. Assuming only one training and one test environment, ρtr and ρte stand for the correlation
+                        between red/green and the digits; µtr and µte stand for the mean intensities of blue; σtr and σte stand
+                        for the standard deviations.</p>
+                </div>
+                <div class="col-sm-6 wow fadeInRight">
+                    <img class="img-responsive" src="images/comparison.jpg" alt="">
+                </div>
+            </div>
+        <br>
+        <img src="images/comp.jpg" alt="feature" class="img-responsive center-block" style="width: 800px;">
+        <p style="text-align: center;">Table 3: Diversity shift measured on the Colored MNIST dataset with only one training environment</p>
+        <p>The study also compared OoD-Bench with other measurement methods, and Table 3 shows the results on the Colored-MNIST dataset. It was found that metrics commonly used to measure differences between distributions, such as EMD and MMD, are insensitive to correlation shifts in OoD datasets, while EMD datasets are also insensitive to diversity changes. While NI can produce comparative results on correlation shifts, it is still one-dimensional like EMD and MMD and cannot distinguish between the various distributional shifts present in the dataset. The study's methodology provided more stable and interpretable comparative results.</p>
+        </div>
+
+        </div>
+        </div><!--/.container-->
+        <br>
+    </section><!--/#comparison-->
+
+
+    <footer id="footer">
+        <div class="container">
+            
+                <h2 class="section-title wow fadeInDown">Contact Us</h2>
+                <p class="wow fadeInDown">Email: ynylincoln@sjtu.edu.cn</p>
+           
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2022 OoD Generalization Lab 
+                </div>
+               
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom-scripts.js"></script>
+</body>
+</html>
